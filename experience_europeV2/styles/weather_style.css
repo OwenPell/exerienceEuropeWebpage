@@ -1,0 +1,71 @@
+#weatherForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+}
+#weatherForm label {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+}
+#weatherForm input[type="text"] {
+    padding: 10px;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 300px;
+}
+
+#weatherForm button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    background-color: #285185;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#weatherForm button:hover {
+    background-color: #D67940;
+}
+
+#formTitle {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #285185;
+    text-align: center;
+}
+
+.dataTable {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.dataTable th {
+    width: 15%;
+    padding: 12px;
+    text-align: left;
+    background-color: #285185;
+    color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.dataTable td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.dataTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.col-header {
+    width: 40%;
+}
+.col-description {
+    width: 60%;
+}

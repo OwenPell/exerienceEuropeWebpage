@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experience Europe</title>
+  <link rel="stylesheet" href="styles/index_style.css" />
+  <link rel="stylesheet" href="styles/flight_style.css" />
+</head>
+<body>
+  <header>
+    <h1>Experience Europe</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="switzerland.html">Switzerland</a></li>
+        <li><a href="italy.html">Italy</a></li>
+        <li><a href="england.html">England</a></li>
+        <li><a href="france.html">France</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="three-column">
+    <section class="center-column">
+        <h2 id="formTitle">Search Flights</h2>
+        <form action="/flights" id="flightForm">
+            <section class="firstForm">
+                <div>
+                    <label for="originCity">Enter Departure City:</label><br>
+                    <input type="text" name="originCity" placeholder="e.g. Huntsville">
+                </div>
+                <div>
+                    <label for="destinationCity">Enter Destination City:</label><br>
+                    <input type="text" name="destinationCity" placeholder="e.g. Bristol">
+                </div>
+                <div>
+                    <label for="departDate">Select Departure Date:</label><br>
+                    <input type="date" name="departDate" id="calDepart">
+                </div>
+                <div>
+                    <label for="returnDate">Select Return Date:</label><br>
+                    <input type="date" name="returnDate" id="calReturn">
+                </div>
+                <div>
+                    <label for="tickets">How Many Travelers:</label><br>
+                    <input type="number" name="tickets" id="tixCounter" min="1" max="15">    
+                </div>
+                <button>Go</button>
+                <button id="clearForm">Clear</button>
+            </section>
+        </form>
+        <section id="tableContainer">
+        </section>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Experience Europe | Designed by Group 7 | Trilla Emerson | Owen Pell | Spenser Willard</p>
+      <p>
+        <a href="index.html">Home</a> |
+        <a href="switzerland.html">Switzerland</a> |
+        <a href="italy.html">Italy</a> |
+        <a href="england.html">England</a> |
+        <a href="france.html">France</a> |
+        <a href="hotels.html">Hotel Info</a> |
+        <a href="budget.html">Budget Calculator</a> |
+        <a href="weather.html">Flight Prices</a> |
+        <a href="weather.html">Weather Forecast</a> |
+        <a href="contact.html">Contact Us</a>
+      </p>
+    </footer>
+  </main>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+  <script src="flightApp.js"></script>
+</body>
+</html>

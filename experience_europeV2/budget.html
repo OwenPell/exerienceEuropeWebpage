@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Calculator - Experience Europe</title>
+  <link rel="stylesheet" href="styles/budget_style.css" />
+</head>
+<body class="budget-page">
+  <header>
+    <h1>Experience Europe</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="switzerland.html">Switzerland</a></li>
+        <li><a href="italy.html">Italy</a></li>
+        <li><a href="england.html">England</a></li>
+        <li><a href="france.html">France</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class = "budget-calculator">
+        <h2>Budget Calculator</h2>
+
+        <label for = "budget">Enter Your Budget ($)</label>
+        <input type = "number" id = "budget" placeholder = "Enter amount">
+        <button onclick = "calculateHotels()">Check Affordable Hotels</button>
+
+        <h2>Hotels You Can Afford:</h2>
+        <ul id = "hotelList"></ul>
+
+        <script>
+            const hotels = [
+                { name: "Hotel San Michele", minPrice: 108, maxPrice: 511 },
+                { name: "Hotel Panoramic", minPrice: 90, maxPrice: 142 },
+                { name: "Le Tronçais", minPrice: 115, maxPrice: 129 },
+                { name: "ibis Styles Bourges", minPrice: 103, maxPrice: 142 },
+                { name: "Hotel Villa Honegg", minPrice: 638, maxPrice: 3050 },
+                { name: "Hotel Edelweiss", minPrice: 271, maxPrice: 578 }
+            ];
+            
+            function calculateHotels() {
+                const budget = document.getElementById("budget").value;
+                const hotelList = document.getElementById("hotelList");
+                hotelList.innerHTML = ""; // Clear previous results
+            
+                if (!budget || budget <= 0) {
+                    alert("Please enter a valid budget.");
+                    return;
+                }
+            
+                const affordableHotels = hotels.filter(hotel => budget >= hotel.minPrice && budget <= hotel.maxPrice);
+            
+                if (affordableHotels.length > 0) {
+                    affordableHotels.forEach(hotel => {
+                        let listItem = document.createElement("li");
+                        listItem.textContent = `${hotel.name} ($${hotel.minPrice} - $${hotel.maxPrice})`;
+                        hotelList.appendChild(listItem);
+                    });
+                } else {
+                    hotelList.innerHTML = "<li>No hotels match your budget range.</li>";
+                }
+            }
+            </script>
+
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Experience Europe | Designed by Group 7</p>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="switzerland.html">Switzerland</a> |
+      <a href="italy.html">Italy</a> |
+      <a href="england.html">England</a> |
+      <a href="france.html">France</a> |
+      <a href="hotels.html">Hotel Info</a> |
+      <a href="budget.html">Budget Calculator</a> |
+      <a href="weather.html">Flight Prices</a> |
+      <a href="weather.html">Weather Forecast</a> |
+      <a href="contact.html">Contact Us</a>
+    </p>
+  </footer>
+</body>
+</html>
